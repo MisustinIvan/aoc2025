@@ -1,6 +1,7 @@
 defmodule Aoc2025.Day02 do
   require Integer
 
+  @spec parse_input(String.t()) :: [Range.t()]
   defp parse_input(input) do
     input
     |> String.split(",")
@@ -12,11 +13,13 @@ defmodule Aoc2025.Day02 do
     end)
   end
 
+  @spec repeating(String.t()) :: boolean
   defp repeating(str) do
     doubled = str <> str
     String.contains?(String.slice(doubled, 1..-2//1), str)
   end
 
+  @spec check(integer) :: integer
   defp check(num) do
     str = "#{num}"
 
@@ -36,6 +39,7 @@ defmodule Aoc2025.Day02 do
     end
   end
 
+  @spec check2(integer) :: integer
   defp check2(num) do
     str = "#{num}"
 
@@ -58,6 +62,7 @@ defmodule Aoc2025.Day02 do
     end
   end
 
+  @spec solve(String.t(), :part1) :: integer
   def solve(input, :part1) do
     input
     |> parse_input
@@ -68,6 +73,7 @@ defmodule Aoc2025.Day02 do
     |> Enum.sum()
   end
 
+  @spec solve(String.t(), :part2) :: integer
   def solve(input, :part2) do
     input
     |> parse_input

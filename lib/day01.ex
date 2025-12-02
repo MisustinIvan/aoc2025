@@ -1,4 +1,5 @@
 defmodule Aoc2025.Day01 do
+  @spec parse_input(binary) :: [integer]
   def parse_input(input) do
     input
     |> String.split("\n")
@@ -15,6 +16,7 @@ defmodule Aoc2025.Day01 do
     end)
   end
 
+  @spec solve(binary, :part1) :: {integer, integer}
   def solve(input, :part1) do
     input
     |> parse_input
@@ -26,6 +28,7 @@ defmodule Aoc2025.Day01 do
     end)
   end
 
+  @spec solve(binary, :part2) :: {integer, integer}
   def solve(input, :part2) do
     input
     |> parse_input
