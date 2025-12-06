@@ -67,7 +67,7 @@ defmodule Mix.Tasks.Aoc do
   defp load_input(day) do
     Path.join(:code.priv_dir(:aoc2025), "inputs/day#{:io_lib.format("~2..0B", [day])}.txt")
     |> File.read!()
-    |> String.trim_trailing()
+    |> String.trim_trailing("\n")
   end
 
   defp measure(fun) do
